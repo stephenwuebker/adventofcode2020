@@ -1,4 +1,6 @@
+-- Problem is posted at https://adventofcode.com/2020/day/1
 -- Import the input data from https://adventofcode.com/2020/day/1/input
+
 -- I just copied and pasted and wrote an INSERT statement because there were only 200 rows of data. 
 -- Ideally, you'd save the input data as a text file and import that file
 
