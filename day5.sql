@@ -83,4 +83,4 @@ FROM dbo.day5
 SELECT MIN(SeatID) - 1 FROM cte WHERE SeatID - 99 <> RowNumber
 
 -- Check the SeatID doesn't exist
-SELECT * FROM #seats WHERE SeatID = 633
+SELECT * FROM dbo.day5 WHERE SeatID = 633
