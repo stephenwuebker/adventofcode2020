@@ -74,12 +74,13 @@ Your seat wasn't at the very front or back, though; the seats with IDs +1 and -1
 
 What is the ID of your seat?
 */
+;WITH cte AS (
 SELECT *, ROW_NUMBER() OVER (ORDER BY SeatID) AS RowNumber
-INTO #seats
 FROM dbo.day5 
-ORDER BY RowID, ColumnID
+) 
 
 -- The first SeatID to mismatch the pattern - 1 should be our seat
-SELECT * FROM #seats WHERE SeatID - 99 <> RowNumber
+SELECT MIN(SeatID) - 1 FROM cte WHERE SeatID - 99 <> RowNumber
+
 -- Check the SeatID doesn't exist
 SELECT * FROM #seats WHERE SeatID = 633
